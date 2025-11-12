@@ -18,9 +18,9 @@ public class WeatherDance : MonoBehaviour
     Quaternion lastRot;
     Quaternion nextRot;
 
-    //going to simply say that Z axis == 0 is "north" in the case of wind direction
-    //date and time don't matter, as I only care about the intervals, record numbers
-    //then everything can become a float
+    //going to simply say that Y axis rot = 0, Z forward, is "north" in the case of wind direction
+    //date and time don't matter, as I only care about the intervals, the record numbers
+    //then everything else in the data can become a float
     
      //the columns
     enum COLS
@@ -86,7 +86,26 @@ public class WeatherDance : MonoBehaviour
         timer = Time.time;              //now
         lastRot = transform.rotation;   //looking where
         nextRot = lastRot;              //and to initialize...
-       
+
+        //lets get a min/max on rain normalized to 1.0f
+        float min = 0;
+        float max = 0;
+        for(int i = 0; i < rainHour.Count; i++)
+        {
+            if (rainHour[i] > max)
+            {
+                max = rainHour[i];
+            }
+        }
+        //so now we have the biggest value, we normalize the values to this, 0 to 1.0f
+        for (int i = 0; i < rainHour.Count; i++)
+        {
+            //if max is whatever, then max over max == 1.0f?
+            rainHour[i] = rainHour[i] / max;
+            
+        }
+
+
     }
 
     // Update is called once per frame
