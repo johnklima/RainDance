@@ -11,13 +11,14 @@ public class WeatherDance : MonoBehaviour
     public string filename;
     public DataTable Data;
     public List<float> windDir = new List<float>();
+    public List<float> rainHour = new List<float>();
 
     float timer = -1;
     int curRec = 0;
     Quaternion lastRot;
     Quaternion nextRot;
 
-    //going to simply say that Z axis in "north" in the case of wind direction
+    //going to simply say that Z axis == 0 is "north" in the case of wind direction
     //date and time don't matter, as I only care about the intervals, record numbers
     //then everything can become a float
     
@@ -68,6 +69,15 @@ public class WeatherDance : MonoBehaviour
 
                     windDir.Add(f);
                 }
+
+                if(col == (int)COLS.RainHour)
+                {
+                    //this is totally fucked up!
+                    float f = float.Parse(item.ToString());
+
+                    rainHour.Add(f);
+                }
+
                 col++;
             }
            
