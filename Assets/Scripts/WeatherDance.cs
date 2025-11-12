@@ -5,7 +5,6 @@ using System;
 using static UnityEngine.Rendering.DebugUI;
 
 
-
 public class WeatherDance : MonoBehaviour
 {
 
