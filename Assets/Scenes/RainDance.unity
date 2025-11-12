@@ -487,8 +487,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b6caa811d1f4b34489a9d5ca21de1af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1527458152}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b6caa811d1f4b34489a9d5ca21de1af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1527458154}
   m_SourcePrefab: {fileID: 100100000, guid: 1b6caa811d1f4b34489a9d5ca21de1af, type: 3}
+--- !u!1 &1527458151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b6caa811d1f4b34489a9d5ca21de1af, type: 3}
+  m_PrefabInstance: {fileID: 1527458150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1527458152
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527458151}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a1f1d4ed5d86bf4683d01201a7ddad7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1527458154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527458151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004aa376987bde249bd864f563b1483c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeatherDance
+  filename: 
+  windDir: []
+  rainHour: []
+  facing: 0
 --- !u!1001 &1879339334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -544,8 +593,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae76df20949fb65489133410b9c4847f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1879339336}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae76df20949fb65489133410b9c4847f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1879339338}
   m_SourcePrefab: {fileID: 100100000, guid: ae76df20949fb65489133410b9c4847f, type: 3}
+--- !u!1 &1879339335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ae76df20949fb65489133410b9c4847f, type: 3}
+  m_PrefabInstance: {fileID: 1879339334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1879339336
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879339335}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a1f1d4ed5d86bf4683d01201a7ddad7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1879339338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879339335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004aa376987bde249bd864f563b1483c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeatherDance
+  filename: 
+  windDir: []
+  rainHour: []
+  facing: 180
 --- !u!1 &2049780258
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2049780259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +679,7 @@ MonoBehaviour:
   filename: 
   windDir: []
   rainHour: []
+  facing: 0
 --- !u!65 &2049780260
 BoxCollider:
   m_ObjectHideFlags: 0

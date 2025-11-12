@@ -13,6 +13,8 @@ public class WeatherDance : MonoBehaviour
     public List<float> windDir = new List<float>();
     public List<float> rainHour = new List<float>();
 
+    public float facing = 0;
+
     float timer = -1;
     int curRec = 0;
     Quaternion lastRot;
@@ -117,6 +119,7 @@ public class WeatherDance : MonoBehaviour
             timer = Time.time;                          //reset
             lastRot = transform.rotation;               //looking where now
             float y = windDir[curRec];                  //get data rec
+            y += facing;                                //add my offset
             nextRot = Quaternion.Euler(0, y, 0);        //looking where next
             lerptime = 0;                               //reset lerp
             //increment and check
