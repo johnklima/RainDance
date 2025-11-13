@@ -12,6 +12,7 @@ public class WeatherDance : MonoBehaviour
     public DataTable Data;
     public List<float> windDir = new List<float>();
     public List<float> rainHour = new List<float>();
+    public List<float> outTemp = new List<float>();
 
     public float facing = 0;
 
@@ -66,7 +67,7 @@ public class WeatherDance : MonoBehaviour
                 Debug.Log(col + " " + item);
                 if(col == (int) COLS.WindDir)
                 {
-                    //this is totally fucked up!
+                    //this is totally fuupt!
                     float f = float.Parse(item.ToString());
 
                     windDir.Add(f);
@@ -74,23 +75,27 @@ public class WeatherDance : MonoBehaviour
 
                 if(col == (int)COLS.RainHour)
                 {
-                    //this is totally fucked up!
+                    //this is totally fuupt!
                     float f = float.Parse(item.ToString());
 
                     rainHour.Add(f);
                 }
 
+                if(col == (int)COLS.OutTemp)
+                {
+                    //this is totally fuupt!
+                    float f = float.Parse(item.ToString());
+                    outTemp.Add(f);
+                }
+
+
                 col++;
             }
            
         }
-        //get our start values
-        timer = Time.time;              //now
-        lastRot = transform.rotation;   //looking where
-        nextRot = lastRot;              //and to initialize...
-
+        
         //lets get a min/max on rain normalized to 1.0f
-        float min = 0;
+        float min = 10000f;
         float max = 0;
         for(int i = 0; i < rainHour.Count; i++)
         {
@@ -98,6 +103,11 @@ public class WeatherDance : MonoBehaviour
             {
                 max = rainHour[i];
             }
+            if (rainHour[i] < min)
+            {
+                min = rainHour[i];
+            }
+
         }
         //so now we have the biggest value, we normalize the values to this, 0 to 1.0f
         for (int i = 0; i < rainHour.Count; i++)
@@ -107,6 +117,13 @@ public class WeatherDance : MonoBehaviour
             
         }
 
+        //do the same for other columns...
+
+
+        //get our start values
+        timer = Time.time;              //now
+        lastRot = transform.rotation;   //looking where
+        nextRot = lastRot;              //and to initialize...
 
     }
 
