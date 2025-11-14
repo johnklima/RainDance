@@ -15,11 +15,15 @@ public class WeatherDance : MonoBehaviour
     public List<float> outTemp = new List<float>();
 
     public float facing = 0;
+    public float lastHiphop = 0;
+    public float hiphop = 0;
 
     float timer = -1;
-    int curRec = 0;
+    public int curRec = 0;
     Quaternion lastRot;
     Quaternion nextRot;
+
+    Animator anim;
 
     //going to simply say that Y axis rot = 0, Z forward, is "north" in the case of wind direction
     //date and time don't matter, as I only care about the intervals, the record numbers
@@ -53,6 +57,9 @@ public class WeatherDance : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        anim = GetComponent<Animator>();
+
 
         filename = Application.dataPath + "/Data/weather.txt";
         Data = ReadFile(filename,'|', true);
@@ -139,20 +146,38 @@ public class WeatherDance : MonoBehaviour
             y += facing;                                //add my offset
             nextRot = Quaternion.Euler(0, y, 0);        //looking where next
             lerptime = 0;                               //reset lerp
+
+            //anim blend is simpler
+            lastHiphop = hiphop;
+            hiphop = rainHour[curRec];
+            
+            
             //increment and check
             curRec++;
             if(curRec >= windDir.Count )
             {
                 curRec = 0;
             }
+
+
+
         }
 
         //simply interpolate by one second intervals over DT
+        
         lerptime += Time.deltaTime;
         if (lastRot != nextRot)
         {
             transform.rotation = Quaternion.Lerp(lastRot, nextRot, lerptime);
         }
+        if(hiphop!=lastHiphop)
+        {
+            float f = Mathf.Lerp(lastHiphop, hiphop, lerptime);
+            anim.SetFloat("HipHopDancing", f);
+        }
+       
+            
+        
         
 
     }
