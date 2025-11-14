@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 
 
+
 public class WeatherDance : MonoBehaviour
 {
 
@@ -25,14 +26,14 @@ public class WeatherDance : MonoBehaviour
     Quaternion lastRot;
     Quaternion nextRot;
 
-    public float lastHiphop = 0;
-    public float hiphop = 0;
+    public float lastHiphop = 1;
+    public float hiphop = 1;
 
-    public float lastRumba = 0;
-    public float rumba = 0;
+    public float lastRumba = 1;
+    public float rumba = 1;
 
-    public float lastSilly = 0;
-    public float silly = 0;
+    public float lastSilly = 1;
+    public float silly = 1;
 
 
     Animator anim;
@@ -190,6 +191,8 @@ public class WeatherDance : MonoBehaviour
         timer = Time.time;              //now
         lastRot = transform.rotation;   //looking where
         nextRot = lastRot;              //and to initialize...
+        curRec = 100 + UnityEngine.Random.Range(-50, 50);               //Grrrrr system
+        
 
     }
 
