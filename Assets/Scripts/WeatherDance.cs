@@ -21,7 +21,7 @@ public class WeatherDance : MonoBehaviour
     
     
     float timer = -1;
-    public int curRec = 0;
+    public int curRec = 155;   //start here
     Quaternion lastRot;
     Quaternion nextRot;
 
