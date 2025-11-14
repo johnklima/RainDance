@@ -13,15 +13,27 @@ public class WeatherDance : MonoBehaviour
     public List<float> windDir = new List<float>();
     public List<float> rainHour = new List<float>();
     public List<float> outTemp = new List<float>();
+    public List<float> windStr = new List<float>();
+
+
 
     public float facing = 0;
-    public float lastHiphop = 0;
-    public float hiphop = 0;
-
+    
+    
     float timer = -1;
     public int curRec = 0;
     Quaternion lastRot;
     Quaternion nextRot;
+
+    public float lastHiphop = 0;
+    public float hiphop = 0;
+
+    public float lastRumba = 0;
+    public float rumba = 0;
+
+    public float lastSilly = 0;
+    public float silly = 0;
+
 
     Animator anim;
 
@@ -95,6 +107,12 @@ public class WeatherDance : MonoBehaviour
                     outTemp.Add(f);
                 }
 
+                if (col == (int)COLS.Wind)
+                {
+                    //this is totally fuupt!
+                    float f = float.Parse(item.ToString());
+                    windStr.Add(f);
+                }
 
                 col++;
             }
@@ -125,6 +143,47 @@ public class WeatherDance : MonoBehaviour
         }
 
         //do the same for other columns...
+        min = 10000f;
+        max = 0;
+        for (int i = 0; i < outTemp.Count; i++)
+        {
+            if (outTemp[i] > max)
+            {
+                max = outTemp[i];
+            }
+            if (outTemp[i] < min)
+            {
+                min = outTemp[i];
+            }
+        }
+        //in the case of temperature, max - min is the whole range
+        float r = max - min;
+        for (int i = 0; i < outTemp.Count; i++)
+        {
+            outTemp[i] = (outTemp[i] - min) / r;   //min record - min = 0, div by range = 1 max ?
+        }
+
+        //and once more for wind strength, time to make a function!
+
+        min = 10000f;
+        max = 0;
+        for (int i = 0; i < windStr.Count; i++)
+        {
+            if (windStr[i] > max)
+            {
+                max = windStr[i];
+            }
+            if (windStr[i] < min)
+            {
+                min = windStr[i];
+            }
+        }
+        //in the case of wind, max - min is the whole range
+        r = max - min;
+        for (int i = 0; i < windStr.Count; i++)
+        {
+            windStr[i] = (windStr[i] - min) / r;   //min record - min = 0, div by range = 1 max ?
+        }
 
 
         //get our start values
@@ -150,8 +209,13 @@ public class WeatherDance : MonoBehaviour
             //anim blend is simpler
             lastHiphop = hiphop;
             hiphop = rainHour[curRec];
-            
-            
+
+            lastRumba = rumba;
+            rumba = outTemp[curRec];
+
+            lastSilly = silly;
+            silly = windStr[curRec];
+
             //increment and check
             curRec++;
             if(curRec >= windDir.Count )
@@ -170,15 +234,25 @@ public class WeatherDance : MonoBehaviour
         {
             transform.rotation = Quaternion.Lerp(lastRot, nextRot, lerptime);
         }
+
         if(hiphop!=lastHiphop)
         {
             float f = Mathf.Lerp(lastHiphop, hiphop, lerptime);
             anim.SetFloat("HipHopDancing", f);
         }
-       
-            
-        
-        
+
+        if (rumba != lastRumba)
+        {
+            float f = Mathf.Lerp(lastRumba, rumba, lerptime);
+            anim.SetFloat("RumbaDancing", f);
+        }
+
+        if (silly != lastSilly)
+        {
+            float f = Mathf.Lerp(lastSilly, silly, lerptime);
+            anim.SetFloat("SillyDancing", f);
+        }
+
 
     }
 
