@@ -84,7 +84,7 @@ public class WeatherDance : MonoBehaviour
             foreach (var item in dataRow.ItemArray)
             {
                 //so, which columns am I interested in?
-                Debug.Log(col + " " + item);
+                //Debug.Log(col + " " + item);
                 if(col == (int) COLS.WindDir)
                 {
                     //this is totally fuupt!

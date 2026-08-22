@@ -438,7 +438,7 @@ Transform:
   m_GameObject: {fileID: 251639711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.514, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -885,6 +885,11 @@ MonoBehaviour:
   rumba: 1
   lastSilly: 1
   silly: 1
+--- !u!4 &1527458155 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1b6caa811d1f4b34489a9d5ca21de1af, type: 3}
+  m_PrefabInstance: {fileID: 1527458150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1581343169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1134,11 @@ MonoBehaviour:
   rumba: 1
   lastSilly: 1
   silly: 1
+--- !u!4 &1879339339 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ae76df20949fb65489133410b9c4847f, type: 3}
+  m_PrefabInstance: {fileID: 1879339334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2031802334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1383,7 @@ GameObject:
   - component: {fileID: 2119251648}
   - component: {fileID: 2119251647}
   - component: {fileID: 2119251654}
+  - component: {fileID: 2119251655}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -1564,6 +1575,22 @@ MonoBehaviour:
   Multiplayer: {fileID: 851554820}
   Speed: 5
   Sensitivity: 200
+--- !u!114 &2119251655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119251646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39071feeb01ba44dafd375781bda184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  Multiplayer: {fileID: 0}
+  Characters:
+  - {fileID: 1527458155}
+  - {fileID: 1879339339}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
