@@ -630,9 +630,10 @@ GameObject:
   m_Component:
   - component: {fileID: 851554821}
   - component: {fileID: 851554820}
+  - component: {fileID: 851554822}
   m_Layer: 0
   m_Name: Multiplayer Manager
-  m_TagString: Untagged
+  m_TagString: NetworkManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -770,6 +771,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &851554822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851554819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783336771e82e62458fddb8548a20c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.alteruna.multiplayer::AlterunaComponents.Spawner
+  Multiplayer: {fileID: 851554820}
+  SpawnableObjects:
+  - {fileID: 919132149155446097, guid: 1b6caa811d1f4b34489a9d5ca21de1af, type: 3}
+  - {fileID: 919132149155446097, guid: ae76df20949fb65489133410b9c4847f, type: 3}
+  OnObjectSpawn:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObjectDespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  ForceSync: 1
 --- !u!1 &1416636510
 GameObject:
   m_ObjectHideFlags: 0
