@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class CharacterSelect : CommunicationBridge
+public class CharacterSelect : AttributesSync
 {
     public Transform[] Characters;
     public Text debug;
@@ -27,15 +27,19 @@ public class CharacterSelect : CommunicationBridge
         int c = Multiplayer.GetUsers().Count;
         debug.text = ("players " + c);
 
-        SpawnCharacter();       
+        //SpawnCharacter();
+        BroadcastRemoteMethod(0);
 
     }
+
+    [SynchronizableMethod]
     void SpawnCharacter()
     {
         int c = Multiplayer.GetUsers().Count;
         GameObject avy = spawner.Spawn(c - 1);
 
         avy.transform.parent = avatar.transform;
+        avy.transform.position = Vector3.zero;
 
     }
     void InstanceCharacter() 
