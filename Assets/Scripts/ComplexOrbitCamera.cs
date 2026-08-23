@@ -27,7 +27,7 @@ public class ComplexOrbitCamera : MonoBehaviour
 
             Ray ray = pointCam.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 1000, layerMask))
+            if (Physics.Raycast(ray, out hit , 1000, layerMask))
             {
                 moveTarget.position = hit.point;
             }
