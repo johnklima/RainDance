@@ -212,12 +212,18 @@ public class WeatherDance : MonoBehaviour
             //anim blend is simpler
             lastHiphop = hiphop;
             hiphop = rainHour[curRec];
+            if (hiphop < 0.2f)
+                hiphop = 0.2f;
 
             lastRumba = rumba;
             rumba = outTemp[curRec];
+            if (rumba < 0.2f)
+                rumba = 0.2f;
 
             lastSilly = silly;
             silly = windStr[curRec];
+            if (silly < 0.2f)
+                silly = 0.2f;
 
             //increment and check
             curRec++;
@@ -235,7 +241,7 @@ public class WeatherDance : MonoBehaviour
         lerptime += Time.deltaTime;
         if (lastRot != nextRot)
         {
-            transform.rotation = Quaternion.Lerp(lastRot, nextRot, lerptime);
+            //transform.rotation = Quaternion.Lerp(lastRot, nextRot, lerptime);
         }
 
         if(hiphop!=lastHiphop)
