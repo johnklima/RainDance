@@ -438,7 +438,7 @@ Transform:
   m_GameObject: {fileID: 251639711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.514, z: 0}
+  m_LocalPosition: {x: 0, y: -0.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -787,6 +787,7 @@ MonoBehaviour:
   SpawnableObjects:
   - {fileID: 919132149155446097, guid: 1b6caa811d1f4b34489a9d5ca21de1af, type: 3}
   - {fileID: 919132149155446097, guid: ae76df20949fb65489133410b9c4847f, type: 3}
+  - {fileID: 2818257682805600706, guid: 18458f1a9559080438cd06c6edc4ec71, type: 3}
   OnObjectSpawn:
     m_PersistentCalls:
       m_Calls: []
@@ -1144,7 +1145,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031802334}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1349,6 +1350,7 @@ GameObject:
   - component: {fileID: 2119251647}
   - component: {fileID: 2119251654}
   - component: {fileID: 2119251655}
+  - component: {fileID: 2119251656}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -1436,7 +1438,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119251646}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1518,7 +1520,7 @@ Transform:
   m_GameObject: {fileID: 2119251646}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.34, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1553,10 +1555,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Multiplayer: {fileID: 0}
+  _uidString: 57772fbe-6103-416b-a1c7-b3247a262f57
+  Reliability: 1
+  LocalMethodBehavior: 1
   Characters:
-  - {fileID: -8679921383154817045, guid: 1b6caa811d1f4b34489a9d5ca21de1af, type: 3}
-  - {fileID: -8679921383154817045, guid: ae76df20949fb65489133410b9c4847f, type: 3}
+  - {fileID: 8724417888025359739, guid: 18458f1a9559080438cd06c6edc4ec71, type: 3}
   debug: {fileID: 1635025230}
+--- !u!114 &2119251656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119251646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7564320391a8fba4cb07ed1c98806f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.alteruna.multiplayer::AlterunaComponents.UniqueAvatarChild
+  Multiplayer: {fileID: 851554820}
+  Prefabs:
+  - {fileID: 1801820944469964976, guid: 07df5143abe93904a810336e1ea3eb58, type: 3}
+  - {fileID: 8644756701601106667, guid: d7e2da62c3eae37408b730a32a67121a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

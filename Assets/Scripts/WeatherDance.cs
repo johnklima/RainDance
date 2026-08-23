@@ -191,7 +191,7 @@ public class WeatherDance : MonoBehaviour
         timer = Time.time;              //now
         lastRot = transform.rotation;   //looking where
         nextRot = lastRot;              //and to initialize...
-        curRec = 100 + UnityEngine.Random.Range(-50, 50);               //Grrrrr system
+        //curRec = 100 + UnityEngine.Random.Range(-50, 50);               //Grrrrr system
         
 
     }

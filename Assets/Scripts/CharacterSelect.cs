@@ -11,11 +11,12 @@ public class CharacterSelect : AttributesSync
     public Text debug;
     Alteruna.Multiplayer.Avatar avatar;
     Alteruna.Multiplayer.Spawner spawner;
-
+    UniqueAvatarChild avatarChild;
     private void Awake()
     {
         avatar = GetComponent<Alteruna.Multiplayer.Avatar>();
         spawner = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<Spawner>();
+        avatarChild = GetComponent<UniqueAvatarChild>();    
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,10 +26,13 @@ public class CharacterSelect : AttributesSync
             return;
 
         int c = Multiplayer.GetUsers().Count;
-        debug.text = ("players " + c);
+        debug.text = ("player " + c);
 
+        
+
+        //GameObject.Instantiate(avatarChild.Prefabs[c]);
         //SpawnCharacter();
-        BroadcastRemoteMethod(0);
+        //BroadcastRemoteMethod(0);
 
     }
 
@@ -36,6 +40,14 @@ public class CharacterSelect : AttributesSync
     void SpawnCharacter()
     {
         int c = Multiplayer.GetUsers().Count;
+        if (c == 1)
+        {
+            //GameObject avy = spawner.Spawn(2);
+            avatarChild.OverwritePrefab(avatarChild.Prefabs[1]);
+        }
+
+        return;
+       
         GameObject avy = spawner.Spawn(c - 1);
 
         avy.transform.parent = avatar.transform;
