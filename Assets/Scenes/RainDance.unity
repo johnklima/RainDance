@@ -998,34 +998,10 @@ MonoBehaviour:
       m_Calls: []
   OnOtherUserJoined:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 851554822}
-        m_TargetAssemblyTypeName: TestListener, Assembly-CSharp
-        m_MethodName: NewPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnOtherUserLeft:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 851554822}
-        m_TargetAssemblyTypeName: TestListener, Assembly-CSharp
-        m_MethodName: OldPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnJoinRejected:
     m_PersistentCalls:
       m_Calls: []
@@ -2085,34 +2061,10 @@ MonoBehaviour:
   IsPossessed: 0
   OnPossessed:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2119251655}
-        m_TargetAssemblyTypeName: TestListener, Assembly-CSharp
-        m_MethodName: DoIt
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnUnpossessed:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2119251655}
-        m_TargetAssemblyTypeName: TestListener, Assembly-CSharp
-        m_MethodName: UnDoIt
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!23 &2119251650
 MeshRenderer:
   m_ObjectHideFlags: 0

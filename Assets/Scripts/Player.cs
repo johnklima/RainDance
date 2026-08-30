@@ -1,7 +1,6 @@
+using UnityEngine;
 using Alteruna.Multiplayer;
 using Alteruna.Multiplayer.Core;
-using AlterunaComponents;
-using UnityEngine;
 
 public class Player : CommunicationBridge
 {
@@ -11,13 +10,6 @@ public class Player : CommunicationBridge
     public float distance = 3;
     private Transform _camera;
 
-    public Alteruna.Multiplayer.Avatar avatar;
-    private void Awake()
-    {
-
-  
-
-    }
     private void Start()
     {
         _camera = GetComponentInChildren<Camera>().transform;
@@ -27,8 +19,6 @@ public class Player : CommunicationBridge
     {
         // disables this script for remote players
         enabled = isMe;
-        avatar = GetComponent<Alteruna.Multiplayer.Avatar>();
-       
     }
 
     public void Update()
