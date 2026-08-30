@@ -630,7 +630,6 @@ GameObject:
   m_Component:
   - component: {fileID: 851554821}
   - component: {fileID: 851554820}
-  - component: {fileID: 851554822}
   m_Layer: 0
   m_Name: Multiplayer Manager
   m_TagString: Untagged
@@ -771,18 +770,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &851554822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851554819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f024428b3326443901f239faad1aab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TestListener
 --- !u!1001 &1527458150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1386,7 +1373,6 @@ GameObject:
   - component: {fileID: 2119251648}
   - component: {fileID: 2119251647}
   - component: {fileID: 2119251654}
-  - component: {fileID: 2119251655}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -1578,19 +1564,6 @@ MonoBehaviour:
   Multiplayer: {fileID: 851554820}
   Speed: 5
   Sensitivity: 200
-  avatar: {fileID: 0}
---- !u!114 &2119251655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119251646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f024428b3326443901f239faad1aab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
