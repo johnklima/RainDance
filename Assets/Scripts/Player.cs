@@ -8,7 +8,7 @@ public class Player : CommunicationBridge
 
     public float Speed = 5f;
     public float Sensitivity = 200;
-    
+    public float distance = 3;
     private Transform _camera;
 
     public Alteruna.Multiplayer.Avatar avatar;
@@ -35,6 +35,8 @@ public class Player : CommunicationBridge
     {
         UpdateMovement();
         UpdateRotation();
+
+        
     }
 
     private void UpdateMovement()
