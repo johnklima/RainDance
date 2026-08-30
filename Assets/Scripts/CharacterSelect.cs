@@ -26,11 +26,11 @@ public class CharacterSelect : AttributesSync
             return;
 
         int c = Multiplayer.GetUsers().Count;
-        debug.text = ("player " + c);
+        //debug.text = ("player " + c);
 
         
 
-        //GameObject.Instantiate(avatarChild.Prefabs[c]);
+
         //SpawnCharacter();
         //BroadcastRemoteMethod(0);
 
