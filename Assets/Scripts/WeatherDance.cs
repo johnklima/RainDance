@@ -84,7 +84,7 @@ public class WeatherDance : MonoBehaviour
             foreach (var item in dataRow.ItemArray)
             {
                 //so, which columns am I interested in?
-                //Debug.Log(col + " " + item);
+                Debug.Log(col + " " + item);
                 if(col == (int) COLS.WindDir)
                 {
                     //this is totally fuupt!
@@ -191,7 +191,7 @@ public class WeatherDance : MonoBehaviour
         timer = Time.time;              //now
         lastRot = transform.rotation;   //looking where
         nextRot = lastRot;              //and to initialize...
-        //curRec = 100 + UnityEngine.Random.Range(-50, 50);               //Grrrrr system
+        curRec = 100 + UnityEngine.Random.Range(-50, 50);               //Grrrrr system
         
 
     }
@@ -212,18 +212,12 @@ public class WeatherDance : MonoBehaviour
             //anim blend is simpler
             lastHiphop = hiphop;
             hiphop = rainHour[curRec];
-            if (hiphop < 0.2f)
-                hiphop = 0.2f;
 
             lastRumba = rumba;
             rumba = outTemp[curRec];
-            if (rumba < 0.2f)
-                rumba = 0.2f;
 
             lastSilly = silly;
             silly = windStr[curRec];
-            if (silly < 0.2f)
-                silly = 0.2f;
 
             //increment and check
             curRec++;
@@ -241,7 +235,7 @@ public class WeatherDance : MonoBehaviour
         lerptime += Time.deltaTime;
         if (lastRot != nextRot)
         {
-            //transform.rotation = Quaternion.Lerp(lastRot, nextRot, lerptime);
+            transform.rotation = Quaternion.Lerp(lastRot, nextRot, lerptime);
         }
 
         if(hiphop!=lastHiphop)
