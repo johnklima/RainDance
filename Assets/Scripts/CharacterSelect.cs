@@ -26,13 +26,13 @@ public class CharacterSelect : AttributesSync
             return;
 
         int c = Multiplayer.GetUsers().Count;
-        //debug.text = ("player " + c);
+        debug.text += ("player " + c) +"\n";
 
         
 
 
-        //SpawnCharacter();
-        //BroadcastRemoteMethod(0);
+        SpawnCharacter();
+        BroadcastRemoteMethod(0);
 
     }
 
@@ -43,7 +43,7 @@ public class CharacterSelect : AttributesSync
         if (c == 1)
         {
             //GameObject avy = spawner.Spawn(2);
-            avatarChild.OverwritePrefab(avatarChild.Prefabs[1]);
+            avatarChild.OverwritePrefab(avatarChild.Prefabs[2]);
         }
 
         return;

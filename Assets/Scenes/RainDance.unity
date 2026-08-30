@@ -1109,7 +1109,8 @@ MonoBehaviour:
   SpawnableObjects:
   - {fileID: 919132149155446097, guid: 1b6caa811d1f4b34489a9d5ca21de1af, type: 3}
   - {fileID: 919132149155446097, guid: ae76df20949fb65489133410b9c4847f, type: 3}
-  - {fileID: 2818257682805600706, guid: 18458f1a9559080438cd06c6edc4ec71, type: 3}
+  - {fileID: 919132149155446097, guid: 2b8d7f005fbeac14abc4ba6caa886c98, type: 3}
+  - {fileID: 919132149155446097, guid: 796418828d9797a479fac0ecbf11a575, type: 3}
   OnObjectSpawn:
     m_PersistentCalls:
       m_Calls: []
@@ -1648,7 +1649,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '
+
+'
 --- !u!222 &1635025231
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2249,6 +2252,8 @@ MonoBehaviour:
   Prefabs:
   - {fileID: 1801820944469964976, guid: 07df5143abe93904a810336e1ea3eb58, type: 3}
   - {fileID: 8644756701601106667, guid: d7e2da62c3eae37408b730a32a67121a, type: 3}
+  - {fileID: 858226651904579073, guid: d71fcf5c13bc1574bbc5d1aae0a2f10c, type: 3}
+  - {fileID: 6381939181832774584, guid: 194d88e1223e3654ab7000dcd37d4b4f, type: 3}
 --- !u!114 &2119251658
 MonoBehaviour:
   m_ObjectHideFlags: 0
