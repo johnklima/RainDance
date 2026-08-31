@@ -1,6 +1,5 @@
 using Alteruna.Multiplayer;
 using Alteruna.Multiplayer.Core;
-using System.Security.Claims;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +17,11 @@ public class CharacterSelect : AttributesSync
         spawner = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<Spawner>();
         avatarChild = GetComponent<UniqueAvatarChild>();    
     }
-
+    public override void Possessed(bool isMe, User user)
+    {
+        // disables this script for remote players
+        enabled = isMe;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,32 +29,34 @@ public class CharacterSelect : AttributesSync
             return;
 
         int c = Multiplayer.GetUsers().Count;
-        debug.text += ("player " + c) +"\n";
+        debug.text += ("players: " + c) +"\n";
 
-        
-
-
-        SpawnCharacter();
-        BroadcastRemoteMethod(0);
 
     }
-
-    [SynchronizableMethod]
-    void SpawnCharacter()
+    public void ChangeMe(int which)
     {
-        int c = Multiplayer.GetUsers().Count;
-        if (c == 1)
+        SpawnCharacter(which);
+     
+        BroadcastRemoteMethod("SpawnCharacter",which);
+    }
+    [SynchronizableMethod]  //is zero, it's first
+    void SpawnCharacter(int which)
+    {
+
+        Debug.Log("hello SPAWN");
         {
-            //GameObject avy = spawner.Spawn(2);
-            avatarChild.OverwritePrefab(avatarChild.Prefabs[2]);
+            
+            avatarChild.OverwritePrefab(avatarChild.Prefabs[which]);
         }
 
         return;
-       
-        GameObject avy = spawner.Spawn(c - 1);
 
-        avy.transform.parent = avatar.transform;
-        avy.transform.position = Vector3.zero;
+        //int c = Multiplayer.GetUsers().Count;
+ 
+        //GameObject avy = spawner.Spawn(c - 1);
+
+        //avy.transform.parent = avatar.transform;
+        //avy.transform.position = Vector3.zero;
 
     }
     void InstanceCharacter() 
