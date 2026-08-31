@@ -49,16 +49,24 @@ public class CharacterSelect : AttributesSync
             avatarChild.OverwritePrefab(avatarChild.Prefabs[which]);
         }
 
-        return;
+      
 
-        //int c = Multiplayer.GetUsers().Count;
- 
-        //GameObject avy = spawner.Spawn(c - 1);
-
-        //avy.transform.parent = avatar.transform;
-        //avy.transform.position = Vector3.zero;
+     
 
     }
+    void UseSpawnerCharacter()
+    {
+        int c = Multiplayer.GetUsers().Count;
+
+        GameObject avy = spawner.Spawn(c - 1);
+
+        avy.transform.parent = avatar.transform;
+        avy.transform.position = Vector3.zero;
+
+    }
+
+
+
     void InstanceCharacter() 
     {
         int c = Multiplayer.GetUsers().Count;
