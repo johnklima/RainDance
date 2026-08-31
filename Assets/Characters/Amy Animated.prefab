@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 8498345836109987888}
   - component: {fileID: 6114733349363404606}
   m_Layer: 0
-  m_Name: amy
+  m_Name: Amy Animated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

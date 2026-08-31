@@ -3319,7 +3319,7 @@ GameObject:
   - component: {fileID: 8493931458597947859}
   - component: {fileID: 3533120948906066145}
   m_Layer: 0
-  m_Name: claire
+  m_Name: Claire Animated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
